@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 hr {
-  border: 1px solid black;
+  border: 1px solid darkgoldenrod;
   margin: 20px 0;
 }
 
@@ -31,9 +31,10 @@ code, pre {
   border-radius: 4px;
   overflow-x: auto;
 }
-ul {
-  margin: 20px;
+li {
+  margin-left:20px;
 }
+
 img {
   margin: 20px;
 }
