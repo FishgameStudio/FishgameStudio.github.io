@@ -25,7 +25,7 @@
     <h2>GitHub Stats</h2>
     <hr>
     <img src="https://github-readme-streak-stats.herokuapp.com/?user=FishgameStudio&theme=tokyonight"/>
-    <h2>Pinned Repos</h2>
+    <h2>Popular Repos</h2>
     <hr>
     <div id="repoWrap"></div>
 
@@ -36,15 +36,16 @@ async function getTop3Repos() {
   const url = `https://api.github.com/users/${USERNAME}/repos?type=owner&per_page=100`;
   const res = await fetch(url);
   const repos = await res.json();
+  const ownRepos = repos.filter(repo => !repo.fork);
 
   // Comprehensive score: star + fork + watch
-  repos.sort((a, b) => {
+  ownRepos.sort((a, b) => {
     const scoreA = a.stargazers_count + a.forks_count + a.watchers_count;
     const scoreB = b.stargazers_count + b.forks_count + b.watchers_count;
     return scoreB - scoreA;
   });
 
-  const top3 = repos.slice(0, 3);
+  const top3 = ownRepos.slice(0, 3);
   render(top3);
 }
 
@@ -74,7 +75,9 @@ getTop3Repos();
     </script>
     <h2>Contact</h2>
     <hr>
-    <a href="mailto:popxh@outlook.com">Nicola Grey</a>
-    <a href="https://github.com/FishgameStudio">GitHub</a>
+    <ul>
+    <li>Email: <a href="mailto:popxh@outlook.com">Nicola Grey</a></li>
+    <li>GitHub: <a href="https://github.com/FishgameStudio">FishgameStudio</a><li></li>
+    </ul>
   </body>
 </html>
