@@ -7,25 +7,25 @@
 }
 
 body {
-  background: #00008B;
+  background: lightyellow;
   padding: 20px;
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 20px 0;
   text-transform: capitalize;
-  color: lightyellow;
+  color: black;
 }
 
 hr {
-  border: 1px solid lightyellow;
+  border: 1px solid black;
   margin: 20px 0;
 }
 
 code, pre {
   font-family: Consolas, "Courier New", monospace;
   color: white;
-  background: black;
+  background: #444;
   padding: 10px;
   margin: 20px 0;
   border-radius: 4px;
