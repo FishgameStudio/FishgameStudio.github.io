@@ -8,7 +8,73 @@
     <meta name="color-scheme" content="light">
   </head>
   <body>
-    <h1>temporary test</h1>
+    <h1>Hi👋 This is <b>Fishgame Studio</b></h1>
     <hr>
+    OpenSource Creator &middot; Backend Developer
+    <h2>About Me</h2>
+    <hr>
+    Hi! This is <b>Fishgame Studio</b>. I learned programming for a long time, I think programming is really fun.
+    <ul>
+      <li><b>🛠️Main Tech</b>: C, C++, Python, Rust, PowerShell, Git, Markdown, etc.</li> 
+      <li><b>🎯Focus Area</b>: CLI tools development, script automation, helpful tool libraries</li>
+      <li><b>📚Currently Learning</b>: SQL syntax, Rust security management, frontend coding</li>
+      <li><b>⚡️Daily Workflow</b>: Write scripts to automate repetitive dev tasks</li>
+      <li><b>🎮Hoppies</b>: Open-source contribution, playing Minecraft</li>
+    </ul>
+    <img src="https://skillicons.dev/icons?i=c,cpp,python,powershell,git,vscode,rust,markdown&theme=dark", alt="Stacks" />
+    <h2>GitHub Stats</h2>
+    <hr>
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=FishgameStudio&theme=tokyonight"/>
+    <h2>Pinned Repos</h2>
+    <hr>
+    <div id="repoWrap"></div>
+
+    <script>
+const USERNAME = "FishgameStudio";
+
+async function getTop3Repos() {
+  const url = `https://api.github.com/users/${USERNAME}/repos?type=owner&per_page=100`;
+  const res = await fetch(url);
+  const repos = await res.json();
+
+  // Comprehensive score: star + fork + watch
+  repos.sort((a, b) => {
+    const scoreA = a.stargazers_count + a.forks_count + a.watchers_count;
+    const scoreB = b.stargazers_count + b.forks_count + b.watchers_count;
+    return scoreB - scoreA;
+  });
+
+  const top3 = repos.slice(0, 3);
+  render(top3);
+}
+
+function render(list) {
+  const wrap = document.getElementById("repoWrap");
+  wrap.innerHTML = "";
+
+  list.forEach(repo => {
+    const lang = repo.language ?? "Unknown";
+    wrap.innerHTML += `
+    <div class="repo-card">
+      <h3><a target="_blank" href="${repo.html_url}">${repo.name}</a></h3>
+      <p>${repo.description || "No description provided"}</p>
+      <div class="meta">
+        Star⭐ ${repo.stargazers_count}
+        &nbsp;Fork🍴 ${repo.forks_count}
+        &nbsp;Watch👀 ${repo.watchers_count}
+        <br>
+        &nbsp;Language: ${lang}
+      </div>
+    </div>
+    `;
+  })
+}
+
+getTop3Repos();
+    </script>
+    <h2>Contact</h2>
+    <hr>
+    <a href="mailto:popxh@outlook.com">Nicola Grey</a>
+    <a href="https://github.com/FishgameStudio">GitHub</a>
   </body>
 </html>
