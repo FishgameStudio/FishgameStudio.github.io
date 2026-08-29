@@ -39,9 +39,9 @@ img {
 }
 
 .repo-card {
-    background: lightyellow;
-    border-radius: 5px;
-    border: 1px solid darkgoldenrod;
-    margin: 20px;
-    padding: 10px;
+  background: lightyellow;
+  border-radius: 5px;
+  border: 1px solid darkgoldenrod;
+  margin: 20px;
+  padding: 20px;
 }
