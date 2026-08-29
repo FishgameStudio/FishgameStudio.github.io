@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Fishgame Studio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
     <meta name="color-gamut" content="srgb">
     <meta name="color-scheme" content="light">
   </head>
@@ -35,6 +35,12 @@ const USERNAME = "FishgameStudio";
 async function getTop3Repos() {
   const url = `https://api.github.com/users/${USERNAME}/repos?type=owner&per_page=100`;
   const res = await fetch(url);
+  if (!res.ok) {
+    console.warn("Failed to get user data");
+    let wrap = document.getElementById("repoWrap");
+    wrap.innerHTML = `<p><b>Oh no!</b> Failed to get user data.</p>`;
+    throw new Error("Failed to get user data");
+  }
   const repos = await res.json();
   const ownRepos = repos.filter(repo => !repo.fork);
 

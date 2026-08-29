@@ -41,6 +41,6 @@ img {
 .repo-card {
     background: #dfdfc0;
     border-radius: 5px;
-    border: darkgoldenrod;
+    border: 1px solid darkgoldenrod;
     margin: 20px;
 }
