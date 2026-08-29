@@ -60,11 +60,11 @@ function render(list) {
       <h3><a target="_blank" href="${repo.html_url}">${repo.name}</a></h3>
       <p>${repo.description || "No description provided"}</p>
       <div class="meta">
-        Star⭐ ${repo.stargazers_count}
-        &nbsp;Fork🍴 ${repo.forks_count}
-        &nbsp;Watch👀 ${repo.watchers_count}
+        Star: ${repo.stargazers_count}
+        &nbsp;&middot;&nbsp;Fork: ${repo.forks_count}
+        &nbsp;&middot;&nbsp;Watch: ${repo.watchers_count}
         <br>
-        &nbsp;Language: ${lang}
+        Language: ${lang}
       </div>
     </div>
     `;

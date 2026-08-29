@@ -13,7 +13,6 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 20px 0;
-  text-transform: capitalize;
   color: black;
 }
 
@@ -37,4 +36,11 @@ li {
 
 img {
   margin: 20px;
+}
+
+.repo-card {
+    background: #dfdfc0;
+    border-radius: 5px;
+    border: darkgoldenrod;
+    margin: 20px;
 }
