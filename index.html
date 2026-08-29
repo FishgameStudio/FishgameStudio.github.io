@@ -63,7 +63,7 @@ function render(list) {
     const lang = repo.language ?? "Unknown";
     wrap.innerHTML += `
     <div class="repo-card">
-      <h3><a target="_blank" href="${repo.html_url}">${repo.name}</a></h3>
+      <h3 style="margin:5px 20px;" ><a target="_blank" href="${repo.html_url}">${repo.name}</a></h3>
       <p>${repo.description || "No description provided"}</p>
       <div class="meta">
         Star: ${repo.stargazers_count}
